@@ -1,14 +1,32 @@
-## Spotify Data Analysis: What Characteristics Make Songs Reach the Top 100?
-#
+# Spotify Data Analysis: What Characteristics Make Songs Reach the Top 100?
+
+Samantha Webster - swebster@chapman.edu
+Allissa Caltagirone - calta102@mail.chapman.edu
+Yaxi Lei - ylei@chapman.edu
 
 
 You can use the [editor on GitHub](https://github.com/swebster2/Spotify-Data-Analysis/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Code
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+```{}
+setwd("/Users/1d_lyx/Desktop/Rdataset/")
+songDF <- read.csv("featuresdf.csv")
+songDF2 <- read.csv("data.csv")
+songDF2$key <- as.factor(songDF2$key)
+songDF2$mode <- as.factor(songDF2$mode)
+songDF2$time_signature <- as.factor(songDF2$time_signature)
+songDF2$target <- as.factor(songDF2$target)
+```
+
+```{}
+songDF$mode <- as.factor(songDF$mode)
+summary(songDF[,-c(1,2)]) #min, max, and mean
+round(sapply(songDF[,-c(1,2)], sd), 4) #standard deviation
+```
+We delete the first two rows because they are id and names, which does not make sense in this analysis.
 
 ```markdown
 Syntax highlighted code block
