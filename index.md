@@ -1,6 +1,6 @@
 # Spotify Data Analysis: What Characteristics Influence a Song Reaching the Top 100 List?
 
-Authors:
+### Authors:
 - Samantha Webster - swebster@chapman.edu
 - Allissa Caltagirone - calta102@mail.chapman.edu
 - Yaxi Lei - ylei@chapman.edu
