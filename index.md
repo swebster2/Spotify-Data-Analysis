@@ -132,13 +132,13 @@ songDF2$top100artist <- as.factor(ifelse(is.element(songDF2$artist,songDF$artist
 songDF$ranking <- (1:100)
 ```
 
-## Regression for predicting ranking
+## Regression for Predicting Ranking
 ```{r}
 mod1 <- lm(ranking ~ danceability + energy + loudness + I(mode) + speechiness + acousticness + instrumentalness + liveness + valence + tempo + duration_ms, data = songDF)
 summary(mod1)
 ```
 
-## Tree for predicting ranking
+## Tree for Predicting Ranking
 ```{r message=FALSE, warning=FALSE}
 library("randomForest")
 require("rpart")
@@ -149,7 +149,7 @@ plot(ranktree)
 text(ranktree, use.n = TRUE)
 ```
 
-## mse
+## MSE - Mean Squared Error
 ```{r}
 library(Metrics)
 pred1 <- predict(rf, songDF)
@@ -170,7 +170,7 @@ coef(Lasso, s = "lambda.min")
 Lasso$glmnet.fit$dev.ratio[which(Lasso$glmnet.fit$lambda == Lasso$lambda.min)]
 ```
 
-## tree
+## Tree
 ```{r}
 library("randomForest")
 require("rpart")
